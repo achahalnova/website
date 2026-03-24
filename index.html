@@ -3,25 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f2f5;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-        }
-        h1 {
-            font-size: 4rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-    </style>
+    <title>Saraswati Senior Secondary School | PAI, Kaithal</title>
+    <meta name="description" content="Saraswati Senior Secondary School, located in PAI, Kaithal, provides excellent education from Nursery to 12th class. Experience holistic development and world-class facilities.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome!</h1>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Saraswati <span>School</span></h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#academics">Academics</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact" class="btn-primary-sm">Contact Us</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in-up">
+            <span class="badge">Nursery to 12th Class</span>
+            <h1 class="hero-title">Shaping the Leaders of Tomorrow.</h1>
+            <p class="hero-subtitle">Welcome to <strong>Saraswati Senior Secondary School, PAI, Kaithal</strong>. We provide a nurturing environment focused on academic excellence, moral values, and all-round development.</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn-primary">Discover More</a>
+                <a href="#gallery" class="btn-secondary">View Campus</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container split-layout">
+            <div class="about-text fade-in-left">
+                <h2 class="section-title">A Legacy of <span class="highlight">Excellence</span></h2>
+                <p>Located in the heart of PAI, Kaithal, Saraswati Senior Secondary School is dedicated to fostering an environment where students thrive academically, socially, and emotionally. From tender beginnings in Nursery all the way up to the pivotal 12th class, our journey is intertwined with the comprehensive growth of each child.</p>
+                <p>Our dedicated faculty employs modern teaching methodologies, ensuring that standard curricula are met with innovative thinking and practical applications.</p>
+                <ul class="feature-list">
+                    <li>✓ Experienced & Dedicated Faculty</li>
+                    <li>✓ Focus on Moral & Ethical Values</li>
+                    <li>✓ World-Class Sports & Co-curriculars</li>
+                </ul>
+            </div>
+            <div class="about-image fade-in-right">
+                <img src="school_building.png" alt="Saraswati School Building" id="img-building">
+                <div class="img-accent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics & Facilities -->
+    <section class="academics section bg-light" id="academics">
+        <div class="container text-center fade-in-up">
+            <h2 class="section-title">Comprehensive <span class="highlight">Education</span></h2>
+            <p class="section-desc">We offer a robust curriculum designed to challenge boundaries and cultivate brilliant minds from Nursery through 12th grade.</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>Rigorous Academics</h3>
+                    <p>Our curriculum is designed to meet national standards, ensuring students achieve top-tier board results.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏃‍♂️</div>
+                    <h3>Sports & Athletics</h3>
+                    <p>Physical education is a priority. We host annual sports days to encourage teamwork and physical fitness.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎭</div>
+                    <h3>Holistic Development</h3>
+                    <p>Regular assemblies, cultural events, and co-curricular programs shape confident, articulate individuals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery section" id="gallery">
+        <div class="container fade-in-up">
+            <h2 class="section-title text-center">Life at <span class="highlight">Saraswati</span></h2>
+            <p class="section-desc text-center">Glimpses of our vibrant campus life, assemblies, and sporting events.</p>
+            
+            <div class="masonry-grid">
+                <div class="gallery-item large">
+                    <img src="school_assembly.png" alt="Morning Assembly" id="img-assembly">
+                    <div class="overlay"><h4>Morning Assembly</h4></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="school_sports_day.png" alt="Annual Sports Day Podium" id="img-sports">
+                    <div class="overlay"><h4>Annual Sports Day</h4></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="school_building.png" alt="Campus Building" id="img-campus">
+                    <div class="overlay"><h4>Our Campus</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="footer" id="contact">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2>Saraswati <span>School</span></h2>
+                <p>Empowering minds from Nursery to 12th Class through quality education and discipline.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#academics">Academics</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <p>📍 PAI, Kaithal, Haryana</p>
+                <p>📧 info@saraswatischoolpai.edu</p>
+                <p>📞 +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Saraswati Senior Secondary School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
