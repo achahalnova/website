@@ -113,6 +113,31 @@ document.addEventListener('DOMContentLoaded', () => {
             resetInterval();
         });
 
+        // Touch swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        slider.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        slider.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                nextSlide();
+                resetInterval();
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                prevSlide();
+                resetInterval();
+            }
+        }
+
         // Start automatic sliding
         slideInterval = setInterval(nextSlide, 5000);
     }
