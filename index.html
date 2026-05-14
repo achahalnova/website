@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="Yvl9oRARFEA3MDc8xvEmTS1sscJFfFAscQajph1Atb8" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saraswati Senior Secondary School | PAI, Kaithal</title>
@@ -19,7 +18,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#academics">Academics</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#admissions">Admissions</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="#contact" class="btn-primary-sm">Contact Us</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -88,7 +88,40 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Board Results Slider Section -->
+    <section class="results section" id="results">
+        <div class="container fade-in-up">
+            <h2 class="section-title text-center">Celebrating <span class="highlight">Excellence</span></h2>
+            <p class="section-desc text-center">Congratulations to our students on their outstanding performance in the Haryana Board Exams 2026!</p>
+            
+            <div class="slider-container">
+                <div class="slider" id="resultsSlider">
+                    <div class="slide active">
+                        <img src="images/results/main_result.jpeg" alt="Main Result Celebration">
+                        <div class="slide-caption">Overall Board Result Celebrations</div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/results/result.png" alt="Haryana Board Result">
+                        <div class="slide-caption">Haryana Board Top Performers</div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/results/result_1.jpeg" alt="Celebration Image 1">
+                    </div>
+                    <div class="slide">
+                        <img src="images/results/result_2.jpeg" alt="Celebration Image 2">
+                    </div>
+                </div>
+                <button class="slider-btn prev-btn" id="prevSlide">&#10094;</button>
+                <button class="slider-btn next-btn" id="nextSlide">&#10095;</button>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+            <div class="text-center" style="margin-top: 30px;">
+                <a href="gallery.html" class="btn-primary">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Teaser) -->
     <section class="gallery section" id="gallery">
         <div class="container fade-in-up">
             <h2 class="section-title text-center">Life at <span class="highlight">Saraswati</span></h2>
@@ -108,11 +141,127 @@
                     <div class="overlay"><h4>Our Campus</h4></div>
                 </div>
             </div>
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="gallery.html" class="btn-secondary" style="color: var(--primary); border-color: var(--primary);">More Photos</a>
+            </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer class="footer" id="contact">
+    <!-- Admissions Section -->
+    <section class="admissions section bg-light" id="admissions">
+        <div class="container split-layout">
+            <div class="admissions-image fade-in-left">
+                <div class="glass-card admissions-card">
+                    <h3>Admission Open for 2026-27</h3>
+                    <p>Secure your child's future at Saraswati Senior Secondary School.</p>
+                    <ul class="feature-list">
+                        <li>✓ Early Bird Registration</li>
+                        <li>✓ Scholarship Opportunities</li>
+                        <li>✓ Holistic Curriculum</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="margin-top: 20px;">Apply Now</a>
+                </div>
+            </div>
+            <div class="admissions-text fade-in-right">
+                <h2 class="section-title">Join Our <span class="highlight">Community</span></h2>
+                <p>We welcome students from all backgrounds to experience an education that transcends boundaries. Our admission process is transparent, inclusive, and designed to identify the unique potential in every child.</p>
+                <div class="steps-wrapper" style="margin-top: 30px;">
+                    <div class="step">
+                        <div class="step-num">01</div>
+                        <div class="step-content">
+                            <h4>Submit Inquiry</h4>
+                            <p>Fill out the online contact form or visit the campus.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">02</div>
+                        <div class="step-content">
+                            <h4>Campus Tour & Interaction</h4>
+                            <p>Meet our counselors and take a guided tour.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">03</div>
+                        <div class="step-content">
+                            <h4>Enrollment</h4>
+                            <p>Complete documentation and secure admission.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container fade-in-up">
+            <h2 class="section-title text-center">What Parents <span class="highlight">Say</span></h2>
+            <p class="section-desc text-center">Hear from the families who are part of the Saraswati School community.</p>
+            
+            <div class="card-grid">
+                <div class="card glass-card testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"Saraswati School has transformed my child's confidence. The balance between academics and extra-curriculars is phenomenal."</p>
+                    <h4 class="author">- Rajesh Kumar, Parent</h4>
+                </div>
+                <div class="card glass-card testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"The teachers here go above and beyond. My daughter loves going to school every day. The environment is so nurturing."</p>
+                    <h4 class="author">- Sunita Sharma, Parent</h4>
+                </div>
+                <div class="card glass-card testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"Exceptional facilities and a strong focus on moral values. We couldn't have chosen a better school for our son in Kaithal."</p>
+                    <h4 class="author">- Amit Verma, Parent</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section section bg-light" id="contact">
+        <div class="container split-layout">
+            <div class="contact-info fade-in-left">
+                <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+                <p>Have questions about admissions, facilities, or our curriculum? We are here to help!</p>
+                <div class="contact-details">
+                    <div class="detail-item">
+                        <span class="icon">📍</span>
+                        <p>PAI, Kaithal, Haryana</p>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📧</span>
+                        <p>info@saraswatischoolpai.edu</p>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📞</span>
+                        <p>+91 93154 43071</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper fade-in-right">
+                <form id="contactForm" class="glass-form">
+                    <div class="form-group">
+                        <input type="text" id="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4" required placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-100">Send Message</button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
                 <h2>Saraswati <span>School</span></h2>
@@ -124,13 +273,16 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#academics">Academics</a></li>
+                    <li><a href="#admissions">Admissions</a></li>
                 </ul>
             </div>
-            <div class="footer-contact">
-                <h3>Contact Info</h3>
-                <p>📍 PAI, Kaithal, Haryana</p>
-                <p>📧 info@saraswatischoolpai.edu</p>
-                <p>📞 +91 93154 43071</p>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">

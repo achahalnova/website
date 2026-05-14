@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Saraswati Senior Secondary School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(10, 37, 64, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: zoom 0.3s ease;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.9); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+
+        #lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 900px;
+            text-align: center;
+            color: var(--accent);
+            padding: 20px 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: var(--white);
+            font-size: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close-lightbox:hover,
+        .close-lightbox:focus {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Specific styles for gallery.html navbar */
+        .nav-gallery-override .logo,
+        .nav-gallery-override .nav-links a {
+            color: var(--primary);
+        }
+        .nav-gallery-override .btn-primary-sm {
+            color: var(--white) !important;
+        }
+        @media (max-width: 768px) {
+            .nav-gallery-override .hamburger span {
+                background-color: var(--primary);
+            }
+            .nav-gallery-override .nav-links.nav-active a {
+                color: var(--primary) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled nav-gallery-override" id="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Saraswati <span style="color: var(--accent);">School</span></h1>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#academics">Academics</a></li>
+                <li><a href="index.html#admissions">Admissions</a></li>
+                <li><a href="gallery.html" style="color: var(--accent);">Gallery</a></li>
+                <li><a href="index.html#contact" class="btn-primary-sm">Contact Us</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div style="height: 100px;"></div> <!-- Spacer for fixed nav -->
+
+    <!-- Gallery Full Section -->
+    <section class="gallery section" id="full-gallery">
+        <div class="container fade-in-up">
+            <h2 class="section-title text-center">Our <span class="highlight">Gallery</span></h2>
+            <p class="section-desc text-center">A showcase of our amazing Haryana Board results celebrations, campus life, and more.</p>
+            
+            <h3 style="margin: 40px 0 20px; color: var(--primary);">Haryana Board Result 2026 Celebrations</h3>
+            <div class="masonry-grid" id="resultGallery">
+                <div class="gallery-item large" onclick="openLightbox(this)">
+                    <img src="images/results/main_result.jpeg" alt="Main Result Celebration">
+                    <div class="overlay"><h4>Overall Result Celebration</h4></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/results/result_1.jpeg" alt="Celebration Image 1">
+                    <div class="overlay"><h4>Celebrations</h4></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/results/result_2.jpeg" alt="Celebration Image 2">
+                    <div class="overlay"><h4>Celebrations</h4></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/results/result_3.jpeg" alt="Celebration Image 3">
+                    <div class="overlay"><h4>Celebrations</h4></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/results/result_4.jpeg" alt="Celebration Image 4">
+                    <div class="overlay"><h4>Celebrations</h4></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/results/result_6.jpeg" alt="Celebration Image 6">
+                    <div class="overlay"><h4>Celebrations</h4></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/results/result_7.jpeg" alt="Celebration Image 7">
+                    <div class="overlay"><h4>Celebrations</h4></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/results/result_base.jpeg" alt="Celebration Base">
+                    <div class="overlay"><h4>Celebrations</h4></div>
+                </div>
+                <div class="gallery-item large" onclick="openLightbox(this)">
+                    <img src="images/results/result.png" alt="Board Result">
+                    <div class="overlay"><h4>Top Performers List</h4></div>
+                </div>
+            </div>
+
+            <h3 style="margin: 60px 0 20px; color: var(--primary);">Campus & Events</h3>
+            <div class="masonry-grid">
+                <div class="gallery-item large" onclick="openLightbox(this)">
+                    <img src="school_assembly.png" alt="Morning Assembly">
+                    <div class="overlay"><h4>Morning Assembly</h4></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="school_sports_day.png" alt="Annual Sports Day Podium">
+                    <div class="overlay"><h4>Annual Sports Day</h4></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="school_building.png" alt="Campus Building">
+                    <div class="overlay"><h4>Our Campus</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2>Saraswati <span>School</span></h2>
+                <p>Empowering minds from Nursery to 12th Class through quality education and discipline.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#academics">Academics</a></li>
+                    <li><a href="index.html#admissions">Admissions</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Saraswati Senior Secondary School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Lightbox Logic
+        function openLightbox(element) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const captionText = document.getElementById("lightbox-caption");
+            
+            const img = element.querySelector("img");
+            const overlay = element.querySelector(".overlay h4");
+
+            lightbox.style.display = "block";
+            lightboxImg.src = img.src;
+            if(overlay) {
+                captionText.innerHTML = overlay.innerHTML;
+            } else {
+                captionText.innerHTML = "";
+            }
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
+</body>
+</html>

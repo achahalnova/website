@@ -36,4 +36,111 @@ document.addEventListener('DOMContentLoaded', () => {
         const topElements = document.querySelectorAll('.hero-content.fade-in-up');
         topElements.forEach(el => el.classList.add('visible'));
     }, 100);
+
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+        });
+
+        // Close menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('nav-active');
+            });
+        });
+    }
+
+    // Image Slider Logic
+    const slider = document.getElementById('resultsSlider');
+    if (slider) {
+        const slides = slider.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevSlide');
+        const nextBtn = document.getElementById('nextSlide');
+        const dotsContainer = document.getElementById('sliderDots');
+        
+        let currentSlide = 0;
+        let slideInterval;
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = dotsContainer.querySelectorAll('.dot');
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+            resetInterval();
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000); // Change slide every 5s
+        }
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetInterval();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetInterval();
+        });
+
+        // Start automatic sliding
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    // Contact Form handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const status = document.getElementById('form-status');
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            // Simulate API request
+            setTimeout(() => {
+                status.textContent = "Thank you! Your message has been sent successfully.";
+                status.style.color = "var(--primary)";
+                contactForm.reset();
+                btn.textContent = originalText;
+                btn.disabled = false;
+                
+                setTimeout(() => {
+                    status.textContent = '';
+                }, 5000);
+            }, 1500);
+        });
+    }
 });
